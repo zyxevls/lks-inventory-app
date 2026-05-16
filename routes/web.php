@@ -29,6 +29,13 @@ Route::middleware('auth')->group(function () {
         Route::resource('transactions', TransactionController::class);
         Route::resource('categories', CategoryController::class);
         Route::resource('suppliers', SupplierController::class);
+        Route::get('reports', [DashboardController::class, 'index'])->name('reports.index');
+        Route::get('reports/pdf', [DashboardController::class, 'pdf'])->name('reports.pdf');
+    });
+
+    // admin dan kasir bisa akses
+    Route::middleware([RoleMiddleware::class . ':admin,kasir'])->group(function () {
+        Route::get('transactions/create', [TransactionController::class, 'create'])->name('transactions.create');
+        Route::post('transactions', [TransactionController::class, 'store'])->name('transactions.store');
     });
 });
-

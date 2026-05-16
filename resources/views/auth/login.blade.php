@@ -9,8 +9,8 @@
                     <div class="row g-0">
                         <div class="col-12 col-lg-6 bg-white p-4 p-lg-5 d-flex flex-column justify-content-center">
                             <div class="d-flex align-items-center gap-3 mb-3">
-                                <div class="bg-primary text-white rounded-3 d-inline-flex align-items-center justify-content-center fw-bold p-3">
-                                    <i class="bi bi-box-seam fs-4"></i>
+                                <div class="text-white rounded-3 d-inline-flex align-items-center justify-content-center">
+                                    <img src="{{ asset('images/invenstore.png') }}" alt="Logo" width="150px" height="150px" class="img-thumbnails">
                                 </div>
                                 <div>
                                     <p class="text-uppercase text-secondary small fw-semibold mb-1">{{ config('app.name', 'Inventory App') }}</p>
@@ -81,7 +81,7 @@
                                 </div>
 
                                 <button type="submit" class="btn btn-primary btn-lg w-100 fw-semibold">
-                                    Masuk ke Dashboard
+                                    Masuk
                                 </button>
                             </form>
                         </div>
